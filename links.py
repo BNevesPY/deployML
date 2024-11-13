@@ -14,7 +14,7 @@ st.info('Developer')
 icon_size = 20
 
 
-st_button('box', 'https://1f736c6c1baf4d6ef1.gradio.live', 'Check box cnnections', icon_size)
-st_button('box', 'https://ce9079fd173a5d7f24.gradio.live', 'Solar Cells Detect', icon_size)
-st_button('box', 'https://8f361a7b6e12208a41.gradio.live', 'Cientifical Judgement', icon_size)
-st_button('box', 'https://2290e135217e0e9fd1.gradio.live', 'TUV Judgement', icon_size)
+st_button('box', 'https://cd3b8ea535d38b5f91.gradio.live', 'Check box connections', icon_size)
+st_button('box', 'https://02cf9894714e8ffb60.gradio.live', 'Solar Cells Detect', icon_size)
+st_button('box', 'https://fed42e3f492d55f31f.gradio.live', 'Cientifical Judgement', icon_size)
+st_button('box', 'https://30fd32da2e48d278f3.gradio.live', 'TUV Judgement', icon_size)
