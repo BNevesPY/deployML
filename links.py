@@ -1,20 +1,42 @@
 import streamlit as st
-from st_functions import st_button, load_css
-from PIL import Image
+import time
+from webconfig import PgSettings, PageSessions, Sidebar
+import requests
 
-load_css()
-
-col1, col2, col3 = st.columns(3)
-col2.image(Image.open('Logo.jpeg'))
-
-st.header('Bruno Neves')
-
-st.info('Developer')
-
-icon_size = 20
+Pgs = PgSettings()
+Page = PageSessions()
+VertBar = Sidebar()
+HorzBar = Sidebar()
+st.set_page_config(page_title=Pgs.pgtitle,
+                   page_icon=Pgs.pgIcon, layout=Pgs.pgLayout)
 
 
-st_button('box', 'https://cd3b8ea535d38b5f91.gradio.live', 'Check box connections', icon_size)
-st_button('box', 'https://02cf9894714e8ffb60.gradio.live', 'Solar Cells Detect', icon_size)
-st_button('box', 'https://fed42e3f492d55f31f.gradio.live', 'Cientifical Judgement', icon_size)
-st_button('box', 'https://30fd32da2e48d278f3.gradio.live', 'TUV Judgement', icon_size)
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
+local_css('mywebpage/style/style.css')
+# ("https://lottie.host/3b2a8b71-6f1b-429f-bc38-8c9203f381db/XSzOdJycWu.json")
+lottie_codding = load_lottieurl(
+    "https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+st.header(Pgs.pgHeader)
+
+
+flagSideB = VertBar.vertical()
+
+if flagSideB == 0:
+    Page.aboutMe()
+    Page.contactMe()
+elif flagSideB == 1:
+    Page.portolio()
+
+elif flagSideB == 2:
+    Page.algoritmos()
