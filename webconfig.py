@@ -1,8 +1,8 @@
 import streamlit as st
 from st_functions import st_button, load_css
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+#import pandas as pd
+#import numpy as np
+#import matplotlib.pyplot as plt
 
 
 class PgSettings():
@@ -40,12 +40,12 @@ class PageSessions():
         self.devexplode = (0.3, 0.3, 0.3, 0.3, 0.3)
         pass
 
-    def plotpie(self, sizes, explode, labels):
+"""    def plotpie(self, sizes, explode, labels):
         fig1, ax1 = plt.subplots()
         ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
                 shadow=True, startangle=90)
         ax1.axis('equal')
-        return fig1
+        return fig1"""
 
     def aboutMe(self):
         #        labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
@@ -70,7 +70,7 @@ class PageSessions():
             col2.write(self.aboutDescription_7)
             col2.write(self.aboutDescription_8)
             # image('mywebpage/FotoPerfil.jpeg', width=400)
-            with st.container():
+          """  with st.container():
                 personalsk.markdown('## Personal ')
                 personalsk.pyplot(self.plotpie(
                     self.personallsizes, self.personalexplode, self.personallabels))
@@ -79,7 +79,7 @@ class PageSessions():
                     self.cientificalsizes, self.cientificalexplode, self.cientificallabels))
                 DevSk.markdown('## Developer')
                 DevSk.pyplot(self.plotpie(
-                    self.devsizes, self.devexplode, self.devlabels))
+                    self.devsizes, self.devexplode, self.devlabels))"""
 
     def contactMe(self):
         with st.container():
